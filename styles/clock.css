@@ -1,0 +1,117 @@
+::before,
+::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+:root {
+  --clock-width: 400px;
+  --clock-height: 400px;
+}
+
+body::before {
+  content: "";
+  background-image: url(../images/hour-glass.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clock-body-container {
+  width: var(--clock-width);
+  height: var(--clock-height);
+  border: 10px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.center-point {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+.hour-hand {
+  width: 40%;
+  height: 10px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  left: 10%;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+}
+
+.minute-hand {
+  width: 45%;
+  height: 10px;
+  transform-origin: 100%;
+  transform: rotate(80deg);
+  left: 5%;
+  border-radius: 10px;
+  background-color: rgb(39, 39, 39);
+  position: absolute;
+}
+
+.second-hand {
+  width: 50%;
+  height: 10px;
+  transform-origin: 100%;
+  transform: rotate(70deg);
+  left: 0%;
+  border-radius: 10px;
+  background-color: rgb(75, 75, 75);
+  position: absolute;
+}
+
+.hand {
+  z-index: 99;
+}
+
+.number {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  z-index: 98;
+}
+
+.number-12 {
+  top: 0px;
+}
+
+.number-3 {
+  right: 10px;
+}
+
+.number-6 {
+  bottom: 0px;
+}
+
+.number-9 {
+  left: 10px;
+}
