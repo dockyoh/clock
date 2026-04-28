@@ -15,13 +15,23 @@ export function renderHands() {
   const minutesDegs = minutes * steps + 90;
   const hourDegs = hour12 * hourSteps + 90;
 
+  resetHandTransition(secondsDegs, secondHandEl);
+
   secondHandEl.style.transform = `rotate(${secondsDegs}deg)`;
   minuteHandEl.style.transform = `rotate(${minutesDegs}deg)`;
   hourHandEl.style.transform = `rotate(${hourDegs}deg)`;
 }
 
-export function hourFormat12(hours) {
+function hourFormat12(hours) {
   if (hours > 12) {
     return hours - 12;
+  }
+}
+
+function resetHandTransition(degs, HandEl) {
+  if (degs === 90) {
+    HandEl.style.transition = "none";
+  } else {
+    HandEl.style.transition = "";
   }
 }

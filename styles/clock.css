@@ -91,6 +91,7 @@ section {
 
 .hand {
   z-index: 99;
+  transition: 0.06s cubic-bezier(0, -1.29, 1, 2.56);
 }
 
 .number {
